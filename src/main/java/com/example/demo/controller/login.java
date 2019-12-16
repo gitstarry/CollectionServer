@@ -112,13 +112,5 @@ public class login {
         }catch (Exception e){
             return new Result(400);
         }
-
-
-        // 存储用户信息，包括 salt 与 hash 后的密码
-        /*user.setSalt(salt);
-        user.setPassword(encodedPassword);
-        userService.add(user);
-        SecurityUtils.getSubject();
-        return ResultFactory.buildSuccessResult(user);*/
     }
 }
