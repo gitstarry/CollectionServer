@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserDAO">
+  <select id="select" resultType="com.example.demo.entity.User">
+    select * from student_information
+  </select>
+
+	<select id="selectSaltByNumber" resultType="com.example.demo.entity.User">
+    SELECT * FROM student_information WHERE student_number = #{student_number,jdbcType=VARCHAR}
+  </select>
+	<insert id="insertUser" parameterType="com.example.demo.entity.User">
+    insert into student_information ( student_number, password,
+      name, sex, salt)
+    values (#{studentNumber,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+      #{name,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertUse">
+		insert into student_information (
+		studentNumber,
+		password,
+		name,
+		sex,
+		salt
+		)values (
+			#{studentNumber,jdbcType=VARCHAR},
+			#{password,jdbcType=VARCHAR},
+			#{name,jdbcType=VARCHAR},
+			#{sex,jdbcType=VARCHAR},
+			#{salt,jdbcType=VARCHAR}
+		)
+	</insert>
+</mapper>

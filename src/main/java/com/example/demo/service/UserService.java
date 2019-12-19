@@ -11,7 +11,6 @@ import java.util.List;
 public interface UserService {
     List<User> select();
 
-    void insertUser(String password,String username,String salt);
-
-    List<User> selectSaltByName(String name);
+    void insertUser(String studentNumber,String password,String name,String sex,String salt);
+    List<User> selectSaltByNumber(String name);
 }

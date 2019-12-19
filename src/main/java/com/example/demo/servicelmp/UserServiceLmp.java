@@ -22,12 +22,11 @@ public class UserServiceLmp implements UserService {
         return mapper.select();
     }
     @Override
-    public void insertUser(String password,String username,String salt){
-        mapper.insertUser(password,username,salt);
+    public void insertUser(String studentNumber,String password,String name,String sex,String salt){
+        mapper.insertUser(studentNumber,password,name,sex,salt);
     }
-
     @Override
-    public List<User> selectSaltByName(String name){
-        return mapper.selectSaltByName(name);
+    public List<User> selectSaltByNumber(String name){
+        return mapper.selectSaltByNumber(name);
     }
 }
